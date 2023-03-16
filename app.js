@@ -6,9 +6,18 @@ function getComputerChoice() {
     return computerChoice
 }
 
-let computerChoice = getComputerChoice()
+function game() {
+    let userScore = 0;
+    let computerScore = 0;
+    for (i = 1; i <= 6; i++) {
+        let userChoice = prompt("Please enter your choice: 'rock', 'paper', or 'scissors'.").toLowerCase();
+        let computerChoice = getComputerChoice();
+        console.log(playRound(userChoice, computerChoice));
+    }      
+}
+    
 
-let userChoice = "paper"
+
 
 function playRound(userChoice, computerChoice) {
     switch(userChoice) {
@@ -50,24 +59,5 @@ function playRound(userChoice, computerChoice) {
     }
 }
 
-console.log(playRound(userChoice, computerChoice));
+game();
 
-userChoice = getComputerChoice();
-computerChoice = getComputerChoice();
-
-
-
-console.log(playRound(userChoice, computerChoice));
-
-userChoice = getComputerChoice();
-computerChoice = getComputerChoice();
-
-console.log(playRound(userChoice, computerChoice));
-
-userChoice = getComputerChoice();
-computerChoice = getComputerChoice();
-
-console.log(playRound(userChoice, computerChoice));
-
-userChoice = getComputerChoice();
-computerChoice = getComputerChoice();
