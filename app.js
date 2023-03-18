@@ -1,4 +1,6 @@
 
+
+// randomly calculate number to use for RPS selection 
 function getComputerChoice() {
     let choices = ["rock", "paper", "scissors"]
     let randomInt = Math.floor(Math.random() * 3)
@@ -6,23 +8,38 @@ function getComputerChoice() {
     return computerChoice
 }
 
+// score variables
 let userScore = 0;
 let computerScore = 0;
 
+// add event listen to each button to start a round when the user selects a button,
+// and use the button text as user choice
+let rpsButtons = document.querySelectorAll(".choice-buttons .choice-button");
+console.log(rpsButtons);
+
+rpsButtons.forEach((button) => {
+    button.addEventListener('click', () => {
+        console.log(button.textContent);
+        userChoice = button.textContent.toLowerCase();
+        game();
+
+    })
+})
+
+
+// Game of 5 rounds which takes user choice as input and calls playRound function to calculate winner
 function game() {
     userScore = 0
     computerScore = 0
-    for (i = 1; i <= 6; i++) {
-        let userChoice = prompt("Please enter your choice: 'rock', 'paper', or 'scissors'.").toLowerCase();
-        let computerChoice = getComputerChoice();
-        console.log(playRound(userChoice, computerChoice));
-        console.log(`The score is You: ${userScore} - Computer: ${computerScore}`)
-    }      
+    // let userChoice = prompt("Please enter your choice: 'rock', 'paper', or 'scissors'.").toLowerCase();
+    let computerChoice = getComputerChoice();
+    console.log(playRound(userChoice, computerChoice));
+    console.log(`The score is You: ${userScore} - Computer: ${computerScore}`)      
 }
     
 
 
-
+// calculate winner based on user choice and computer choice
 function playRound(userChoice, computerChoice) {
     switch(userChoice) {
         case "rock":
