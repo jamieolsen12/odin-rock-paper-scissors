@@ -1,0 +1,40 @@
+
+
+header {
+    text-align: center;
+    background-color: #111720;
+    color: yellow;
+    margin: 0px 0px 0px 0px;
+    padding: 40px;
+}
+
+main {
+    text-align: center;
+    background-color:  #222831;
+}
+
+.scoreboard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+.score-box {
+    padding: 20px;
+}
+
+.choice-buttons {
+    padding: 20px;
+}
+
+.choice-button {
+    padding: 20px;
+    margin: 20px;
+}
+
+
+footer {
+    color: white;
+}
+
+
