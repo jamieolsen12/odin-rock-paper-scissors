@@ -22,17 +22,20 @@ function getComputerChoice() {
 let userScore = 0;
 let computerScore = 0;
 
+// scoreboard variable to display userScore and computerScore
+let userScoreDisplay = document.querySelector('.user-score-number');
+let computerScoreDisplay = document.querySelector('.computer-score-number');
+
 
 // add event listen to each button to start a round when the user selects a button,
 // and use the button text as user choice
 let rpsButtons = document.querySelectorAll(".choice-buttons .choice-button");
-console.log(rpsButtons);
-
 
 rpsButtons.forEach((button) => {
     button.addEventListener('click', () => {
         userChoice = button.textContent.toLowerCase();
         game();
+        updateScoreboard();
         checkWinner();
     })
 })
@@ -95,6 +98,8 @@ function playRound(userChoice, computerChoice) {
     }
 }
 
+
+// Check if either user or computer have 5 points, if so, declare winner, reset scores to 0
 function checkWinner() {
     if (userScore >= 5) {
         console.log("Game over. You win!!");
@@ -108,3 +113,8 @@ function checkWinner() {
     }
 }
 
+
+function updateScoreboard() {
+    userScoreDisplay.textContent = String(userScore);
+    computerScoreDisplay.textContent = String(computerScore);
+}
