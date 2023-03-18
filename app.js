@@ -1,4 +1,14 @@
 
+// Changes to make
+
+// start round with user choosing a button
+// calculate winner, then display score on the page
+// After 5 wins, declare a winner, then ask if the user wants to play again
+
+// after everything works, make it look good
+
+
+
 
 // randomly calculate number to use for RPS selection 
 function getComputerChoice() {
@@ -12,25 +22,24 @@ function getComputerChoice() {
 let userScore = 0;
 let computerScore = 0;
 
+
 // add event listen to each button to start a round when the user selects a button,
 // and use the button text as user choice
 let rpsButtons = document.querySelectorAll(".choice-buttons .choice-button");
 console.log(rpsButtons);
 
+
 rpsButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        console.log(button.textContent);
         userChoice = button.textContent.toLowerCase();
         game();
-
+        checkWinner();
     })
 })
 
 
 // Game of 5 rounds which takes user choice as input and calls playRound function to calculate winner
 function game() {
-    userScore = 0
-    computerScore = 0
     // let userChoice = prompt("Please enter your choice: 'rock', 'paper', or 'scissors'.").toLowerCase();
     let computerChoice = getComputerChoice();
     console.log(playRound(userChoice, computerChoice));
@@ -86,5 +95,16 @@ function playRound(userChoice, computerChoice) {
     }
 }
 
-game();
+function checkWinner() {
+    if (userScore >= 5) {
+        console.log("Game over. You win!!");
+        userScore = 0;
+        computerScore = 0;
+    }
+    if (computerScore >= 5) {
+        console.log("Game over. Computer wins!");
+        userScore = 0;
+        computerScore = 0;
+    }
+}
 
