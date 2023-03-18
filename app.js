@@ -16,7 +16,7 @@ function game() {
         let userChoice = prompt("Please enter your choice: 'rock', 'paper', or 'scissors'.").toLowerCase();
         let computerChoice = getComputerChoice();
         console.log(playRound(userChoice, computerChoice));
-        console.log(`The score is You:${userScore} - Computer:${computerScore}`)
+        console.log(`The score is You: ${userScore} - Computer: ${computerScore}`)
     }      
 }
     
