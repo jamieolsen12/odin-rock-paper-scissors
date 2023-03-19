@@ -13,6 +13,15 @@ header {
 main {
     text-align: center;
     background-color:  #222831;
+    font-family: 'Roboto', sans-serif;
+}
+
+h2 {
+    color: #ddd;
+}
+
+h3 {
+    color: #ddd;
 }
 
 .scoreboard {
