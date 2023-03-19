@@ -30,6 +30,11 @@ let computerScoreDisplay = document.querySelector('.computer-score-text');
 let topText = document.querySelector('.top-text');
 let bottomText = document.querySelector('.bottom-text');
 
+// add user choice and computer choice variables to show each choice after each round
+let userChoiceDisplay = document.querySelector('.user-choice-display');
+let computerChoiceDisplay = document.querySelector('.computer-choice-display');
+
+
 
 // add event listen to each button to start a round when the user selects a button,
 // and use the button text as user choice
@@ -38,7 +43,9 @@ let rpsButtons = document.querySelectorAll(".choice-buttons-row .choice-button")
 rpsButtons.forEach((button) => {
     button.addEventListener('click', () => {
         userChoice = button.id;
+        computerChoice = getComputerChoice();
         game();
+        updateEmojis()
         updateScoreboard();
         checkWinner();
     })
@@ -48,7 +55,6 @@ rpsButtons.forEach((button) => {
 // Game of 5 rounds which takes user choice as input and calls playRound function to calculate winner
 function game() {
     // let userChoice = prompt("Please enter your choice: 'rock', 'paper', or 'scissors'.").toLowerCase();
-    let computerChoice = getComputerChoice();
     console.log(playRound(userChoice, computerChoice));
     console.log(`The score is You: ${userScore} - Computer: ${computerScore}`)      
 }
@@ -139,4 +145,22 @@ function checkWinner() {
 function updateScoreboard() {
     userScoreDisplay.textContent = `User Score: ${userScore}`;
     computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
+}
+
+// return emoji to display based on choice
+function getEmoji(choice) {
+    switch (choice) {
+        case "rock":
+            return "✊"
+        case "paper":
+            return "✋"
+        case "scissors":
+            return "✌️"
+    }
+}
+
+// update user and computer choice displays with getEmoji() function
+function updateEmojis() {
+    userChoiceDisplay.textContent = getEmoji(userChoice);
+    computerChoiceDisplay.textContent = getEmoji(computerChoice);
 }
