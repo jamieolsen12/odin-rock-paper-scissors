@@ -131,23 +131,27 @@ function playRound(userChoice, computerChoice) {
 function checkWinner() {
     if (userScore >= 5) {
         console.log("Game over. You win!!");
+        topText.textContent = "Game Over!"
+        bottomText.textContent = "You win!"
         userScore = 0;
         computerScore = 0;
     }
     if (computerScore >= 5) {
         console.log("Game over. Computer wins!");
+        topText.textContent = "Game Over!"
+        bottomText.textContent = "Computer wins!"
         userScore = 0;
         computerScore = 0;
     }
 }
 
-
+// update scoreboard using string literals 
 function updateScoreboard() {
     userScoreDisplay.textContent = `User Score: ${userScore}`;
     computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
 }
 
-// return emoji to display based on choice
+// return emoji to display based on choice, for display
 function getEmoji(choice) {
     switch (choice) {
         case "rock":
