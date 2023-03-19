@@ -26,6 +26,10 @@ let computerScore = 0;
 let userScoreDisplay = document.querySelector('.user-score-text');
 let computerScoreDisplay = document.querySelector('.computer-score-text');
 
+// add top-text and bottom-text to change text after each round
+let topText = document.querySelector('.top-text');
+let bottomText = document.querySelector('.bottom-text');
+
 
 // add event listen to each button to start a round when the user selects a button,
 // and use the button text as user choice
@@ -57,12 +61,18 @@ function playRound(userChoice, computerChoice) {
         case "rock":
             switch(computerChoice) {
                 case "rock":
+                    topText.textContent = "It's a tie!";
+                    bottomText.textContent = "Rock ties Rock.";
                     return "It's a tie! rock versus rock.";
                 case "paper":
                     computerScore++;
+                    topText.textContent = "You lose!";
+                    bottomText.textContent = "Paper covers Rock!"
                     return "You lose! paper covers rock!";
                 case "scissors":
                     userScore++;
+                    topText.textContent = "You win!";
+                    bottomText.textContent = "Rock DESTROYS Scissors!"
                     return "You win! rock smashes scissors!";
                 default:
                     return "error. computer choice invalid.";
@@ -71,11 +81,17 @@ function playRound(userChoice, computerChoice) {
             switch(computerChoice) {
                 case "rock":
                     userScore++;
+                    topText.textContent = "You win!";
+                    bottomText.textContent = "Paper covers Rock!"
                     return "You win! paper covers rock!";
                 case "paper":
+                    topText.textContent = "It's a tie!";
+                    bottomText.textContent = "Paper ties Paper.";
                     return "It's a tie! paper versus paper!";
                 case "scissors":
                     computerScore++;
+                    topText.textContent = "You lose!";
+                    bottomText.textContent = "Scissors cuts Paper!"
                     return "You lose! scissors cut paper!";
                 default:
                     return "error. computer choice invalid";
@@ -84,11 +100,17 @@ function playRound(userChoice, computerChoice) {
             switch(computerChoice) {
                 case "rock":
                     computerScore++;
+                    topText.textContent = "You lose!";
+                    bottomText.textContent = "Rock smashes Scissors!";
                     return "You lose! rock smashes scissors!";
                 case "paper":
                     userScore++;
+                    topText.textContent = "You win!";
+                    bottomText.textContent = "Scissors cut Paper!";
                     return "You win! scissors cut paper!";
                 case "scissors":
+                    topText.textContent = "It's a tie.";
+                    bottomText.textContent = "Scissors tie Scissors.";
                     return "It's a tie. scissors versus scissors.";
                 default:
                     return "error. computer choice invalid";
