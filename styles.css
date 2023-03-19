@@ -1,4 +1,9 @@
 
+body {
+    margin: 0;
+    background-color:  #222831;
+}
+
 
 header {
     text-align: center;
@@ -20,6 +25,8 @@ main {
 h2 {
     padding-top: 20px;
     font-size: 32px;
+    margin-block-start: 0;
+    margin-block-end: 0;
 }
 
 h3 {
