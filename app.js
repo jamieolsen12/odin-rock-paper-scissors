@@ -147,8 +147,8 @@ function checkWinner() {
 
 // update scoreboard using string literals 
 function updateScoreboard() {
-    userScoreDisplay.textContent = `User Score: ${userScore}`;
-    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
+    userScoreDisplay.textContent = `User: ${userScore}`;
+    computerScoreDisplay.textContent = `Computer: ${computerScore}`;
 }
 
 // return emoji to display based on choice, for display

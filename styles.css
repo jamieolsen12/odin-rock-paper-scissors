@@ -5,7 +5,7 @@ header {
     background-color: #111720;
     color: yellow;
     margin: 0px 0px 0px 0px;
-    padding: 40px;
+    padding: 20px;
     font-family: 'Press Start 2P', cursive;
     font-size: 20px;
 }
@@ -14,15 +14,15 @@ main {
     text-align: center;
     background-color:  #222831;
     font-family: 'Roboto', sans-serif;
+    color: #ddd;
 }
 
 h2 {
-    color: #ddd;
+    padding-top: 20px;
     font-size: 32px;
 }
 
 h3 {
-    color: #ddd;
     font-size: 20px;
 }
 
@@ -33,21 +33,29 @@ h3 {
 }
 
 .user-choice-display, .computer-choice-display {
-    font-size: 76px;
+    font-size: 125px;
 }
 
 .score-box {
     padding: 20px;
+    width: 170px;
+}
+
+.score-text {
+    font-size: 28px;
 }
 
 .choice-buttons-row {
-    padding: 20px;
+    padding: 0 20px 20px 20px;
 }
 
 .choice-button {
     padding: 20px;
     margin: 20px;
     background-color: #222831;
+    height: 160px;
+    width: 160px;
+    font-size: 80px;
 }
 
 
