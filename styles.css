@@ -18,10 +18,12 @@ main {
 
 h2 {
     color: #ddd;
+    font-size: 32px;
 }
 
 h3 {
     color: #ddd;
+    font-size: 20px;
 }
 
 .scoreboard {
@@ -30,17 +32,22 @@ h3 {
     justify-content: center;
 }
 
+.user-choice-display, .computer-choice-display {
+    font-size: 76px;
+}
+
 .score-box {
     padding: 20px;
 }
 
-.choice-buttons {
+.choice-buttons-row {
     padding: 20px;
 }
 
 .choice-button {
     padding: 20px;
     margin: 20px;
+    background-color: #222831;
 }
 
 

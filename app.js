@@ -23,17 +23,17 @@ let userScore = 0;
 let computerScore = 0;
 
 // scoreboard variable to display userScore and computerScore
-let userScoreDisplay = document.querySelector('.user-score-number');
-let computerScoreDisplay = document.querySelector('.computer-score-number');
+let userScoreDisplay = document.querySelector('.user-score-text');
+let computerScoreDisplay = document.querySelector('.computer-score-text');
 
 
 // add event listen to each button to start a round when the user selects a button,
 // and use the button text as user choice
-let rpsButtons = document.querySelectorAll(".choice-buttons .choice-button");
+let rpsButtons = document.querySelectorAll(".choice-buttons-row .choice-button");
 
 rpsButtons.forEach((button) => {
     button.addEventListener('click', () => {
-        userChoice = button.textContent.toLowerCase();
+        userChoice = button.id;
         game();
         updateScoreboard();
         checkWinner();
@@ -115,6 +115,6 @@ function checkWinner() {
 
 
 function updateScoreboard() {
-    userScoreDisplay.textContent = String(userScore);
-    computerScoreDisplay.textContent = String(computerScore);
+    userScoreDisplay.textContent = `User Score: ${userScore}`;
+    computerScoreDisplay.textContent = `Computer Score: ${computerScore}`;
 }
